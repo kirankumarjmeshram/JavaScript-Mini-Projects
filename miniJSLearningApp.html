@@ -11,11 +11,34 @@ Be creative! -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Mini Js datatype learning app</title>
+   
 </head>
+<style>
+  body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+  } 
+  button{
+      width: 40%;
+      height: 2rem;
+      margin: 0.75%;
+      font-weight: 700;
+      font-size: large;
+      background-color: rgb(214, 223, 140);
+      color: rgb(66, 30, 30);
+  }  
+  h2{
+      font-weight: 800;
+      color: rgb(56, 26, 7);
+  }   
+</style>
 <body>
+    <h2>JavaScript Datatypes Learning</h2>
     <div>
         <button id="objects">Objects</button>
-        <div id="object-info"></div>
+        <p id="object-info"></p>
     </div>
     <div>
         <button id="arrays">Arrays</button>
@@ -34,8 +57,8 @@ Be creative! -->
         <p id="number_info"></p>
     </div>
     <div>
-        <button id="null">null</button>
-        <p id="numm_info"></p>
+        <button id="null_js">null</button>
+        <p id="null_info"></p>
     </div>
     <div>
         <button id="undefined">undefined</button>
@@ -52,19 +75,22 @@ Be creative! -->
     var btn_fun = document.getElementById("functions");
     var btn_string = document.getElementById("string");
     var btn_num = document.getElementById("number");
-    var btn_null = document.getElementById("null");
+    var btn_null = document.getElementById("null_js");
     var btn_undefined = document.getElementById("undefined");
 
-    function infoObj(){
-        document.getElementById("object_info").textContent= `<ul>
-        <li>JavaScript is designed on a simple object-based paradigm.</li>
-        <li>An object is a collection of properties, and a property is an association between a name (or key) and a value.</li>
-        <li>A property's value can be a function, in which case the property is known as a method.</li>
-        <li> The properties of an object define the characteristics of the object.</li>
-        <li>You access the properties of an object with a simple dot-notation.</li>
-    </ul>` 
+    function obj_info(){
+        document.getElementById("object_info").textContent= 'Hii'
     }
-    btn_obj.addEventListener("click",infoObj)
+    btn_obj.addEventListener("click",obj_info)
     
 
+
+
+    // `<ul>
+    //     <li>JavaScript is designed on a simple object-based paradigm.</li>
+    //     <li>An object is a collection of properties, and a property is an association between a name (or key) and a value.</li>
+    //     <li>A property's value can be a function, in which case the property is known as a method.</li>
+    //     <li> The properties of an object define the characteristics of the object.</li>
+    //     <li>You access the properties of an object with a simple dot-notation.</li>
+    // </ul>`
 </script>

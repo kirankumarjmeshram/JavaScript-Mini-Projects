@@ -10,13 +10,12 @@ Be creative! -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Mini Js datatype learning app</title>
 </head>
 <body>
     <div>
         <button id="objects">Objects</button>
-        <p id="object-info"></p>
+        <div id="object-info"></div>
     </div>
     <div>
         <button id="arrays">Arrays</button>
@@ -42,5 +41,30 @@ Be creative! -->
         <button id="undefined">undefined</button>
         <p id="undefined_info"></p>
     </div>
+
+    
+
 </body>
 </html>
+<script>
+    var btn_obj = document.getElementById("objects");
+    var btn_arr = document.getElementById("arrays");
+    var btn_fun = document.getElementById("functions");
+    var btn_string = document.getElementById("string");
+    var btn_num = document.getElementById("number");
+    var btn_null = document.getElementById("null");
+    var btn_undefined = document.getElementById("undefined");
+
+    function infoObj(){
+        document.getElementById("object_info").textContent= `<ul>
+        <li>JavaScript is designed on a simple object-based paradigm.</li>
+        <li>An object is a collection of properties, and a property is an association between a name (or key) and a value.</li>
+        <li>A property's value can be a function, in which case the property is known as a method.</li>
+        <li> The properties of an object define the characteristics of the object.</li>
+        <li>You access the properties of an object with a simple dot-notation.</li>
+    </ul>` 
+    }
+    btn_obj.addEventListener("click",infoObj)
+    
+
+</script>

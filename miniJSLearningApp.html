@@ -10,6 +10,7 @@ Be creative! -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Js datatype learning app</title>
    
 </head>
@@ -17,8 +18,7 @@ Be creative! -->
   body{
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      text-align: center;
+      margin-left: 15%;
   } 
   button{
       width: 40%;
@@ -32,13 +32,22 @@ Be creative! -->
   h2{
       font-weight: 800;
       color: rgb(56, 26, 7);
-  }   
+  }  
+  ul{   display: flex;
+    flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 50%;
+  } 
+  li{
+      font-size: large;
+      font-weight: 600;  }
 </style>
 <body>
     <h2>JavaScript Datatypes Learning</h2>
     <div>
         <button id="objects">Objects</button>
-        <p id="object-info"></p>
+        <div id="object_info"></div>
     </div>
     <div>
         <button id="arrays">Arrays</button>
@@ -73,24 +82,100 @@ Be creative! -->
     var btn_obj = document.getElementById("objects");
     var btn_arr = document.getElementById("arrays");
     var btn_fun = document.getElementById("functions");
-    var btn_string = document.getElementById("string");
+    var btn_str = document.getElementById("string");
     var btn_num = document.getElementById("number");
     var btn_null = document.getElementById("null_js");
-    var btn_undefined = document.getElementById("undefined");
+    var btn_undef = document.getElementById("undefined");
 
     function obj_info(){
-        document.getElementById("object_info").textContent= 'Hii'
+        document.getElementById("object_info").innerHTML = ` <ul>
+        <li>JavaScript is designed on a simple object-based paradigm.</li>
+        <li>An object is a collection of properties, and a property is an association between a name (or key) and a value.</li>
+        <li>A property's value can be a function, in which case the property is known as a method.</li>
+        <li> The properties of an object define the characteristics of the object.</li>
+        <li>You access the properties of an object with a simple dot-notation.</li>
+    </ul> `
     }
+
+    function arr_info(){
+        document.getElementById("arrays_info").innerHTML =`<ul>
+    <li>Arrays are generally described as "list-like objects"</li>
+    <li> they are basically single objects that contain multiple values stored in a list</li>
+    <li>Arrays consist of square brackets and items that are separated by commas.</li>
+    <li>Items in an array are numbered, starting from zero.</li>
+    <li>This number is called the item's index.</li>
+</ul>`
+    }
+    function fun_info(){
+        document.getElementById("functions_info").innerHTML =`<ul>
+      <li>A function is a code snippet that can be called by other code or by itself, or a variable that refers to the function. </li>      
+    <li>Every JavaScript function is actually a Function object</li>
+    <li>This can be seen with the code (function(){}).constructor === Function, which returns true.</li>
+    
+    <li> When a function is called, arguments are passed to the function as input, and the function can optionally return a value.</li>
+    <li>A function name is an identifier included as part of a function declaration or function expression</li>
+</ul>`
+    }
+    function str_info(){
+        document.getElementById("string_info").innerHTML =`<ul>
+    <li>Strings are useful for holding data that can be represented in text form</li>
+    <li>The String object is used to represent and manipulate a sequence of characters.</li>
+    <li>Strings can be created as primitives, from string literals, or as objects, using the String() constructor:</li>
+    <li>String primitives and string objects can be used interchangeably in most situations</li>
+    <li>A String object can always be converted to its primitive counterpart with the valueOf() method.</li>
+</ul>`
+    }
+    function num_info(){
+        document.getElementById("number_info").innerHTML =`<ul>
+    <li>Number is a primitive wrapper object used to represent and manipulate numbers like 37 or -9.25.</li>
+    <li>Values of other types can be converted to numbers using the Number() function.</li>
+    <li>A number literal like 37 in JavaScript code is a floating-point value, not an integer.</li>
+    <li>When used as a function, Number(value) converts a string or other value to the Number type. If the value can't be converted, it returns NaN.</li>
+    <li>Number() Creates a new Number value.</li>
+</ul>`
+    }
+    function null_info(){
+        document.getElementById("null_info").innerHTML =  `<ul>
+    <li>The value null represents the intentional absence of any object value</li>
+    <li>It is one of JavaScript's primitive values and is treated as falsy for boolean operations.</li>
+    <li>The value null is written with a literal: null.</li>
+    <li> null is not an identifier for a property of the global object, like undefined can be. Instead, null expresses a lack of identification, indicating that a variable points to no object</li>
+    <li> In APIs, null is often retrieved in a place where an object can be expected but no object is relevant.</li>
+</ul>`    
+    }
+    function undef_info(){
+        document.getElementById("undefined_info").innerHTML =`<ul>
+    <li>undefined is a primitive value automatically assigned to variables that have just been declared, or to formal arguments for which there are no actual arguments</li>
+    <li>The global undefined property represents the primitive value undefined</li>
+    <li>undefined is a property of the global object. That is, it is a variable in global scope.</li>
+    <li>A variable that has not been assigned a value is of type undefined. </li>
+    <li>. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.</li>
+</ul>`
+    }
+
+
+
+
+
+
     btn_obj.addEventListener("click",obj_info)
+    btn_arr.addEventListener("click",arr_info)
+    btn_fun.addEventListener("click",fun_info)
+    btn_str.addEventListener("click",str_info)
+    btn_num.addEventListener("click",num_info)
+    btn_null.addEventListener("click",null_info)
+    btn_undef.addEventListener("click",undef_info)
+//     function textfor() {
+
+// document.getElementById("object-info").textContent = "hello"
+// }
+
+// btn_obj.addEventListener("click", textfor)
     
 
 
 
-    // `<ul>
-    //     <li>JavaScript is designed on a simple object-based paradigm.</li>
-    //     <li>An object is a collection of properties, and a property is an association between a name (or key) and a value.</li>
-    //     <li>A property's value can be a function, in which case the property is known as a method.</li>
-    //     <li> The properties of an object define the characteristics of the object.</li>
-    //     <li>You access the properties of an object with a simple dot-notation.</li>
-    // </ul>`
+    
+    
+
 </script>

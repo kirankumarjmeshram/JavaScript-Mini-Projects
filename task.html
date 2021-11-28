@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="one">
+        <form>
+            <label for="">Name</label>
+            <input type="text" name="name" id="name">
+            <label for="">Age</label>
+            <input type="number" name="age" id="age">
+            <input type="submit">
+        </form>
+        <table>
+            <tr>
+                <li>Name</li>
+                <li>Age</li>
+                <li>Done</li>
+                <li>Remove</li>
+            </tr>
+        </table>
+        
+    </div>
+</body>
+</html>
+<script>
+    var fm = document.querySelector('form');
+    var td = document.querySelector('table');
+
+    fm.addEventListener('submit',additems);
+
+    function additems(event){
+        event.preventDefault();
+        //prevent default stops the browser from redirecting the web-page
+        //on clinking it refresh the page 
+    var name = document.getElementById("name").value;
+    var age = document.getElementById("age").value;
+
+    if(name.length>0){
+        createRow(name,age);
+    }
+    document.getElementById("name").value='';
+    document.getElementById("age").value='';
+    }
+
+    function createRow(name,age){
+        var row = document.createElement("ul");
+        var td1 = document.createElement('li');
+        td1.textContent = name;
+
+        var td2 = document.createElement('li');
+        td2.textContent = age;
+
+        var td3 = document.createElement('li');
+        td3.textContent = "Done";
+        addEventListener('click',Done);
+
+        var td4 = document.createElement('li');
+        td4.textContent = "remove";
+        addEventListener('click',Remove);
+
+        row.append(td1,td2,td3,td4);
+
+        td.appendChild(row);
+    }
+function Done(e){
+    e.target.textContent ="Completed";
+    e.target.removeEventlistener('dblclick',Done);
+    e.target.parentNode.style.backgroundColor = 'green';
+}
+
+function Remove(e){
+    e.parentNode.remove()
+}
+
+</script>

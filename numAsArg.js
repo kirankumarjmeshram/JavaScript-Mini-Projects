@@ -23,4 +23,7 @@ console.log(sum(3, 4, 5, 6, 7, 8, 10, 40));
 
 function arrObj(el){
 
+
+       
+
    
